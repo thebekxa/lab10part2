@@ -1,18 +1,23 @@
 #include <iostream>
 using namespace std;
 int main() {
-    int temp[31];
-    cout<<"Enter days"<<endl;
-    for (int i = 0; i < 31; i++) {
-        cin>>temp[i];
-    }
+  int temp[31];
+    cout << "Enter 31 temp values: ";
+    for (int i = 0; i < 31; i++)
+        cin >> temp[i];
+
     int x;
-    cout<<"Enter comparison temperature: ";
-    cin>>x;
-    for (int i = 0; i < 31; i++) {
-        if (temp[i] < x) {
-            cout << "First day with tem:"<< x<<"is the day:"<<i+1<<endl;
+    cout << "Enter comparison temp:";
+    cin >> x;
+
+    int *ptr = temp;
+
+    for (int i=0; i<31; i++) {
+        if (*(ptr+i)<x) {
+            cout << "First day with temp " << x << "is day: " << i+1 << endl;
+            break;
         }
     }
+
     return 0;
 }
